@@ -3,8 +3,8 @@ import { View } from 'react-native';
 
 // import { Container } from './styles';
 
-const Home: React.FC = () => {
+const Details: React.FC = () => {
   return <View />;
 }
 
-export default Home;
+export default Details;
