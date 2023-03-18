@@ -1,5 +1,4 @@
 import React from "react";
-import Home from "./screens/Home";
 import Details from "./screens/Details";
 import Cotations from "./screens/Cotations";
 import { NavigationContainer } from "@react-navigation/native";
@@ -8,6 +7,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Inputs from "./screens/Inputs";
 import HomeScreen from "./screens/Home";
+import MyRequests from "./screens/MyRequests";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -30,8 +30,8 @@ const MyTabs = () => {
         }}
       />
       <Tab.Screen
-        name="HomeScreen"
-        component={HomeScreen}
+        name="MyRequests"
+        component={MyRequests}
         options={{
           tabBarLabel: "Meus Pedidos",
           tabBarLabelStyle: {
@@ -39,7 +39,7 @@ const MyTabs = () => {
           },
           headerShown: false,
           tabBarIcon: ({ color }) => (
-            <AntDesign name="home" size={24} color="black" />
+            <AntDesign name="bars" size={24} color="black" />
           ),
         }}
       />
@@ -52,7 +52,7 @@ const MyTabs = () => {
             color: "#000",
           },
           tabBarIcon: ({ color }) => (
-            <AntDesign name="arrowsalt" size={24} color="black" />
+            <AntDesign name="barschart" size={24} color="black" />
           ),
         }}
       />
@@ -76,6 +76,13 @@ const Routes = () => {
           component={Inputs}
           options={{
             title: "Insumos",
+          }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+          options={{
+            title: "Detalhes",
           }}
         />
       </Stack.Navigator>
