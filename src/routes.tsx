@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Inputs from "./screens/Inputs";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -53,6 +54,13 @@ const Routes = () => {
           component={MyTabs}
           options={{
             headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Inputs"
+          component={Inputs}
+          options={{
+            title: "Insumos",
           }}
         />
       </Stack.Navigator>

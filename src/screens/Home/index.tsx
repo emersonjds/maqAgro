@@ -5,13 +5,19 @@ import { Box } from "../../components/Spacing";
 import * as S from "./styles";
 import { categoriesData } from "./category";
 import { Title } from "../../components/Texts";
-import { ScrollView } from "react-native";
+import { ScrollView, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const Home: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [text, setText] = useState("");
+  const navigation = useNavigation();
 
   const onChangeText = (query) => setSearchQuery(query);
+
+  const goToInputs = () => {
+    navigation.navigate("Inputs");
+  };
 
   return (
     <S.Container>
@@ -29,7 +35,15 @@ const Home: React.FC = () => {
         <Box mt={20} flexDirection="row" justifyContent="space-between">
           {categoriesData.map((item) => (
             <Box justifyContent="center" alignItems="center">
-              <Avatar.Image size={90} source={item.image} />
+              <TouchableOpacity
+                onPress={() => {
+                  if (item.name === "Insumos") {
+                    goToInputs();
+                  }
+                }}
+              >
+                <Avatar.Image size={90} source={item.image} />
+              </TouchableOpacity>
               <S.Text>{item.name}</S.Text>
             </Box>
           ))}
@@ -38,7 +52,7 @@ const Home: React.FC = () => {
           <Divider />
         </Box>
         <Box mt={20} ml={20}>
-          <Title>Ultimoss Adicionados</Title>
+          <Title>Ultimos Adicionados</Title>
         </Box>
       </ScrollView>
     </S.Container>
