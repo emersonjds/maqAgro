@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Inputs from "./screens/Inputs";
 import HomeScreen from "./screens/Home";
 import MyRequests from "./screens/MyRequests";
+import Finish from "./screens/Finish";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -83,6 +84,13 @@ const Routes = () => {
           component={Details}
           options={{
             title: "Detalhes",
+          }}
+        />
+        <Stack.Screen
+          name="Finish"
+          component={Finish}
+          options={{
+            title: "Pedido",
           }}
         />
       </Stack.Navigator>

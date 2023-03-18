@@ -9,28 +9,22 @@ export const agribusinessItems = [
     {
         id: 2,
         name: 'Corn',
-        image: 'https://example.com/corn.jpg',
+        image: require("../../assets/img/fert1.png"),
         price: 90.25,
         fraction: '50 kg',
     },
-    {
-        id: 3,
-        name: 'Cotton',
-        image: 'https://example.com/cotton.jpg',
-        price: 220.75,
-        fraction: '25 kg',
-    },
+   
     {
         id: 4,
         name: 'Wheat',
-        image: 'https://example.com/wheat.jpg',
+        image: require("../../assets/img/fert1.png"),
         price: 125.00,
         fraction: '100 kg',
     },
     {
         id: 5,
         name: 'Rice',
-        image: 'https://example.com/rice.jpg',
+        image: require("../../assets/img/fert1.png"),
         price: 180.00,
         fraction: '50 kg',
     },
