@@ -1,34 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native-paper';
-import { Searchbar } from 'react-native-paper';
-
-import React from 'react';
-
+import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { Button, TextInput } from "react-native-paper";
+import { Searchbar } from "react-native-paper";
+import Constants from 'expo-constants';
 
 
-
+import React from "react";
 
 export default function App() {
-    const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [text, setText] = useState("");
 
-    const onChangeSearch = query => setSearchQuery(query);
+  const onChangeText = (query) => setSearchQuery(query);
 
   return (
     <View style={styles.container}>
-
-<Searchbar
-      placeholder="Search"
-      onChangeText={onChangeSearch}
-      value={searchQuery}
-    />
       
-      <Button icon="camera" mode="contained" onPress={() => console.log('Pressed')}>
-    Press me
-  </Button>
+      <Searchbar numberOfLines={1} inputStyle={{height: 50, alignSelf:"center"}} onChangeText={text => onChangeText(text)} value={text} />
 
-  
+
+      {/* <Button
+        icon="camera"
+        mode="contained"
+        onPress={() => console.log("Pressed")}
+      >
+        Press me
+      </Button> */}
+
       <StatusBar style="auto" />
     </View>
   );
@@ -37,8 +36,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
+    paddingTop: Constants.statusBarHeight,
+    // backgroundColor: '#ecf0f1',
+    padding: 8,
+  },
+  searchbar: {
+    width: '100%',
   },
 });
