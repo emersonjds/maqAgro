@@ -61,10 +61,7 @@ const Inputs: FC = () => {
                 <Box mt={10}>
                   <Text>{item.name}</Text>
                   <Text>Fração {item.fraction}</Text>
-                  <Text>
-                    Preço R$
-                    {item.price}
-                  </Text>
+                  <Text>Preço R$ {item.price}</Text>
                 </Box>
               </Box>
             </TouchableOpacity>

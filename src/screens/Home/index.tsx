@@ -4,7 +4,7 @@ import { Box } from "../../components/Spacing";
 
 import * as S from "./styles";
 import { categoriesData } from "./category";
-import { Title } from "../../components/Texts";
+import { Subtitle, Title } from "../../components/Texts";
 import { ScrollView, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
@@ -21,7 +21,17 @@ const HomeScreen: React.FC = () => {
 
   return (
     <S.Container>
-      <Avatar.Image size={50} source={require("../../assets/img/avatar.png")} />
+      <Box flexDirection="row" alignItems="center">
+        <Avatar.Image
+          size={50}
+          source={require("../../assets/img/avatar.png")}
+        />
+        <Box ml={20}>
+          <Title>Bem vindo - Geraldo Miguel</Title>
+          <Subtitle>Conta - 145533-3 - Hortolandia</Subtitle>
+        </Box>
+      </Box>
+
       <Box mt={20}>
         <Searchbar
           placeholder="Pesquise por algo para sua propriedade"
@@ -34,9 +44,7 @@ const HomeScreen: React.FC = () => {
       <ScrollView showsHorizontalScrollIndicator={false}>
         <Box mt={20} flexDirection="row" justifyContent="space-between">
           {categoriesData.map((item) => (
-            <Box justifyContent="center" alignItems="center"
-              key={item.id}
-            >
+            <Box justifyContent="center" alignItems="center" key={item.id}>
               <TouchableOpacity
                 onPress={() => {
                   if (item.name === "Insumos") {
