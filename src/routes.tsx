@@ -5,43 +5,59 @@ import Cotations from "./screens/Cotations";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 const MyTabs = () => {
-  
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarLabel: "Home",
+          tabBarLabelStyle: {
+            color: "#000",
+          },
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="home" size={24} color="black" />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Cotações"
+        component={Cotations}
+        options={{
+          tabBarLabel: "Cotações",
+          tabBarLabelStyle: {
+            color: "#000",
+          },
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="arrowsalt" size={24} color="black" />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+};
+
+const Routes = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen
+      <Stack.Navigator>
+        <Stack.Screen
           name="Home"
-          component={Home}
+          component={MyTabs}
           options={{
-            tabBarLabel: "Home",
-            tabBarLabelStyle: {
-              color: "#000",
-            },
-            tabBarIcon: ({ color }) => (
-              <AntDesign name="home" size={24} color="black" />
-            ),
+            headerShown: false,
           }}
         />
-        <Tab.Screen
-          name="Cotações"
-          component={Cotations}
-          options={{
-            tabBarLabel: "Cotações",
-            tabBarLabelStyle: {
-              color: "#000",
-            },
-            tabBarIcon: ({ color }) => (
-              <AntDesign name="arrowsalt" size={24} color="black" />
-            ),
-          }}
-        />
-      </Tab.Navigator>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
-export default MyTabs;
+export default Routes;
