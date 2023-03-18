@@ -2,9 +2,7 @@ export const agribusinessItems = [
     {
         id: 1,
         name: 'Soybeans',
-        images: [
-            'https://example.com/soybeans.jpg',
-        ],
+        image: require("../../assets/img/fert1.png"),
         price: 150.50,
         fraction: '100 kg',
     },

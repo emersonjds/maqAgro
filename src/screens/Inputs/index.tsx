@@ -55,25 +55,25 @@ const Inputs: FC = () => {
                   width={120}
                   padding={10}
                   mr={10}
-
                 >
                   <Image
-                    source={{ uri: item.image }}
+                    source={item.image}
                     style={{ width: 100, height: 100 }}
                   />
                   <Box
                     mt={10}
                   >
                     <Text>
-                      100l Nitrato {'\n'} de Potassio
-                      {'\n'} Fracionado
+                      {
+                        item.name
+                      }
                     </Text>
                     <Text>
-                      Fração
+                      Fração |
                       {item.fraction}
                     </Text>
                     <Text>
-                      Preço
+                      Preço R$
                       {item.price}
                     </Text>
                   </Box>
