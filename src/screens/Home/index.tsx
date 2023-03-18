@@ -8,7 +8,7 @@ import { Title } from "../../components/Texts";
 import { ScrollView, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const Home: React.FC = () => {
+const HomeScreen: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [text, setText] = useState("");
   const navigation = useNavigation();
@@ -34,7 +34,9 @@ const Home: React.FC = () => {
       <ScrollView showsHorizontalScrollIndicator={false}>
         <Box mt={20} flexDirection="row" justifyContent="space-between">
           {categoriesData.map((item) => (
-            <Box justifyContent="center" alignItems="center">
+            <Box justifyContent="center" alignItems="center"
+              key={item.id}
+            >
               <TouchableOpacity
                 onPress={() => {
                   if (item.name === "Insumos") {
@@ -59,4 +61,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default HomeScreen;
