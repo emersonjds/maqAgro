@@ -1,12 +1,10 @@
-import { useNavigation, useRoute } from "@react-navigation/native";
-import React, { useEffect } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { Text } from "react-native";
 import { SliderBox } from "react-native-image-slider-box";
 import { Box } from "../../components/Spacing";
 import { Subtitle, Title } from "../../components/Texts";
-import { Divider } from "react-native-paper";
-import { Checkbox } from "react-native-paper";
-import { Button } from "react-native-paper";
+import { Divider, Checkbox, Button } from "react-native-paper";
 
 import Colors from "../../components/Constants";
 
