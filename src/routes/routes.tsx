@@ -1,17 +1,18 @@
 import React from "react";
-import Details from "./screens/Details";
-import Cotations from "./screens/Cotations";
+import Details from "../screens/Details";
+import Cotations from "../screens/Cotations";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Inputs from "./screens/Inputs";
-import HomeScreen from "./screens/Home";
-import MyRequests from "./screens/MyRequests";
-import Finish from "./screens/Finish";
+import Inputs from "../screens/Inputs";
+import HomeScreen from "../screens/Home";
+import MyRequests from "../screens/MyRequests";
+import Finish from "../screens/Finish";
+import { PropsRootStack } from "./Models";
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<PropsRootStack>();
 
 const MyTabs = () => {
   return (
