@@ -9,9 +9,10 @@ import Inputs from "../screens/Inputs";
 import HomeScreen from "../screens/Home";
 import MyRequests from "../screens/MyRequests";
 import Finish from "../screens/Finish";
+import { PropsRootStack } from "./Models";
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<PropsRootStack>();
 
 const MyTabs = () => {
   return (
